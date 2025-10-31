@@ -1,0 +1,52 @@
+---
+// @ts-ignore
+import { Icon } from "astro-icon/components";
+
+const benefits = [
+  {
+    title: "Clarity",
+    description: "Know exactly what to address first and why",
+    icon: "bx:bx-bullseye",
+  },
+  {
+    title: "Efficiency",
+    description: "Eliminate repetitive manual work",
+    icon: "bx:bx-time",
+  },
+  {
+    title: "Integration",
+    description: "Systems that talk to each other",
+    icon: "bx:bx-network-chart",
+  },
+  {
+    title: "Scalability",
+    description: "Processes that grow with your business",
+    icon: "bx:bx-trending-up",
+  },
+  {
+    title: "Peace of Mind",
+    description: "Technology that supports your mission",
+    icon: "bx:bx-heart",
+  },
+];
+---
+
+<div id="what-you-achieve" class="mt-24 scroll-mt-20">
+  <div class="mb-12">
+    <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight text-center">
+      What You'll Achieve
+    </h2>
+  </div>
+
+  <div class="grid sm:grid-cols-2 md:grid-cols-5 gap-8 max-w-5xl mx-auto">
+    {benefits.map((benefit) => (
+      <div class="text-center">
+        <div class="bg-primary rounded-full p-3 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+          <Icon class="text-white w-8 h-8" name={benefit.icon} />
+        </div>
+        <h3 class="font-semibold text-lg mb-2 text-slate-800">{benefit.title}</h3>
+        <p class="text-slate-600 text-sm leading-relaxed">{benefit.description}</p>
+      </div>
+    ))}
+  </div>
+</div>

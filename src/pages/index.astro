@@ -1,0 +1,29 @@
+---
+import Container from "@components/container.astro";
+import BackToTop from "@components/backtotop.astro";
+import ContactForm from "@components/contactform.astro";
+import EngagementOptions from "@components/engagementoptions.astro";
+import RecentWork from "@components/recentwork.astro";
+import Services from "@components/services.astro";
+import Testimonials from "@components/testimonials.astro";
+import WhatYouAchieve from "@components/whatyouachieve.astro";
+import WhoIWorkWith from "@components/whoiworkwith.astro";
+import HowIWork from "@components/howiwork.astro";
+import Hero from "@components/hero.astro";
+import Layout from "@layouts/Layout.astro";
+---
+
+<Layout title="">
+  <Container>
+    <Hero />
+    <WhoIWorkWith />
+    <Services />
+    <HowIWork />
+    <EngagementOptions />
+    <WhatYouAchieve />
+    <Testimonials />
+    <RecentWork />
+    <ContactForm />
+  </Container>
+  <BackToTop />
+</Layout>

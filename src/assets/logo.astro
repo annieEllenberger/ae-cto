@@ -1,0 +1,46 @@
+---
+// Professional logo for Annie Ellenberger
+// Clean, modern AE monogram
+// Note: Update colors here to match tailwind.config.cjs primary colors
+---
+
+<svg
+  width="48"
+  height="48"
+  viewBox="0 0 48 48"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+  class="logo">
+  <defs>
+    <linearGradient id="logo-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#059669" />
+      <stop offset="100%" style="stop-color:#047857" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Subtle background circle -->
+  <circle cx="24" cy="24" r="22" fill="url(#logo-gradient)" opacity="0.08"/>
+  
+  <!-- Clean AE lettermark -->
+  <text 
+    x="24" 
+    y="32" 
+    font-family="system-ui, -apple-system, sans-serif" 
+    font-size="24" 
+    font-weight="700" 
+    text-anchor="middle" 
+    fill="url(#logo-gradient)"
+    letter-spacing="-1">
+    AE
+  </text>
+</svg>
+
+<style>
+  .logo {
+    transition: transform 0.2s ease;
+  }
+  
+  .logo:hover {
+    transform: scale(1.08);
+  }
+</style>

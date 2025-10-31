@@ -1,0 +1,55 @@
+---
+// @ts-ignore
+import { Icon } from "astro-icon/components";
+
+const challenges = [
+  "We're paying for multiple tools that should be talking to each other",
+  "Our current setup worked when we were smaller, but it's not scaling",
+  "We're spending hours every week copying data between systems",
+  "We know we need to modernize our technology but don't know where to start"
+];
+---
+
+<div id="who-i-work-with" class="mt-16 scroll-mt-20">
+  <div class="mb-12">
+    <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
+      Who I Work With
+    </h2>
+  </div>
+
+  <div class="max-w-4xl">
+    <p class="text-lg text-slate-700 leading-relaxed mb-6">
+      I work best with small (1-20 person) <strong>mission-driven businesses</strong> who are committed to making a positive impact:
+    </p>
+
+    <ul class="space-y-3 mb-12">
+      <li class="flex gap-3 items-start text-slate-700">
+        <Icon name="bx:bx-check" class="w-6 h-6 text-primary shrink-0 mt-0.5" />
+        <span class="leading-relaxed">Leaders who need <strong>strategic</strong> technical guidance but can't justify a full-time CTO</span>
+      </li>
+      <li class="flex gap-3 items-start text-slate-700">
+        <Icon name="bx:bx-check" class="w-6 h-6 text-primary shrink-0 mt-0.5" />
+        <span class="leading-relaxed">Companies that have <strong>outgrown</strong> their initial technology setup</span>
+      </li>
+      <li class="flex gap-3 items-start text-slate-700">
+        <Icon name="bx:bx-check" class="w-6 h-6 text-primary shrink-0 mt-0.5" />
+        <span class="leading-relaxed">Organizations <strong>juggling</strong> multiple software tools that don't communicate</span>
+      </li>
+      <li class="flex gap-3 items-start text-slate-700">
+        <Icon name="bx:bx-check" class="w-6 h-6 text-primary shrink-0 mt-0.5" />
+        <span class="leading-relaxed">Businesses bogged down by <strong>manual processes</strong> and repetitive tasks</span>
+      </li>
+    </ul>
+
+    <div class="bg-slate-50 rounded-lg p-8">
+      <h3 class="text-xl font-semibold mb-4 text-slate-800">Common challenges I hear:</h3>
+      <ul class="space-y-2">
+        {challenges.map((challenge) => (
+          <li class="text-slate-700 leading-relaxed italic">
+            "{challenge}"
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</div>

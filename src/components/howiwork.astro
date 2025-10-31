@@ -1,0 +1,100 @@
+---
+// @ts-ignore
+import { Icon } from "astro-icon/components";
+
+const allServices = [
+  {
+    title: "Level 1 – Discovery & Audit",
+    items: [
+      "Deep-dive assessment of current systems, workflows, and pain points",
+      "Review of team structure (if applicable), tools, and process inefficiencies",
+      "Written analysis with prioritized recommendations",
+      "Follow-up session to discuss findings"
+    ],
+    icon: "bx:bx-search-alt",
+  },
+  {
+    title: "Level 2 – Roadmap & Strategy",
+    items: [
+      "Collaborative planning to define your technical strategy",
+      "Alignment of software decisions with business goals",
+      "Quick wins for immediate relief",
+      "Medium and long-term prioritized action plan",
+      "Specific tool and integration recommendations",
+      "Risk assessment and budget planning"
+    ],
+    icon: "bx:bx-map",
+  },
+  {
+    title: "Level 3 – Ongoing Strategic Guidance & CTO Support",
+    items: [
+      "Regular check-ins and progress reviews",
+      "Technical decision-making support",
+      "Project coordination and vendor management",
+      "Team mentoring and process improvement"
+    ],
+    icon: "bx:bx-briefcase",
+  },
+  {
+    title: "Implementation Projects",
+    items: [
+      "System integrations and automation implementation",
+      "Process documentation and training",
+      "May include subcontractors depending on size"
+    ],
+    icon: "bx:bx-wrench",
+  },
+];
+---
+
+<div id="how-i-work" class="mt-24 scroll-mt-20">
+  <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
+    How I Work
+  </h2>
+  <p class="text-lg mt-4 text-slate-600">
+    Flexible service levels designed to meet your business where it is.
+  </p>
+</div>
+
+<div class="mt-16 max-w-4xl mx-auto space-y-4">
+  {
+    allServices.map((service) => (
+      <details class="group border border-slate-200 rounded-lg">
+        <summary class="flex gap-4 items-center cursor-pointer p-6 hover:bg-slate-50 transition-colors">
+          <div class="bg-primary rounded-full p-3 w-12 h-12 shrink-0 flex items-center justify-center">
+            <Icon class="text-white w-6 h-6" name={service.icon} />
+          </div>
+          <h3 class="font-semibold text-xl flex-1">{service.title}</h3>
+          <svg 
+            class="w-5 h-5 text-slate-400 transition-transform group-open:rotate-180" 
+            fill="none" 
+            stroke="currentColor" 
+            viewBox="0 0 24 24"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </summary>
+        <div class="px-6 pb-6 pl-20">
+          <ul class="text-slate-600 space-y-3">
+            {service.items.map((item) => (
+              <li class="flex gap-3 items-start">
+                <span class="text-slate-400 shrink-0 leading-relaxed">•</span>
+                <span class="leading-relaxed">{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </details>
+    ))
+  }
+</div>
+
+<style>
+  details summary::-webkit-details-marker {
+    display: none;
+  }
+  
+  details summary {
+    list-style: none;
+  }
+</style>

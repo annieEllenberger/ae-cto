@@ -1,0 +1,42 @@
+---
+// @ts-ignore
+import { Icon } from "astro-icon/components";
+
+const projects = [
+  {
+    title: "Nonprofit Startup Incubator Operations System",
+    description: "Evaluated processes, automated candidate tracking and mentorship scheduling, created custom integrations between CRM, internal website, and Eventbrite, and implemented KPI reporting dashboard to track impact.",
+    icon: "bx:bx-line-chart"
+  },
+  {
+    title: "Off-Grid Weather Monitoring System",
+    description: "Built custom satellite data system for off-grid weather monitoring; handled entire technical project independently from conception to deployment.",
+    icon: "bx:bx-cloud"
+  },
+  {
+    title: "EverDriven Technologies — a Decade of Technical Leadership",
+    description: "Designed event-driven Azure service architecture enabling rapid company growth. Pioneered cloud-native design reducing infrastructure costs by 90% while improving scalability and performance. Led through two successful company acquisitions, providing critical due diligence support.",
+    icon: "bx:bx-trophy"
+  }
+];
+---
+
+<div id="recent-work" class="mt-24 scroll-mt-20">
+  <div class="mb-12">
+    <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
+      Recent Work
+    </h2>
+  </div>
+
+  <div class="max-w-5xl mx-auto grid sm:grid-cols-1 md:grid-cols-3 gap-6">
+    {projects.map((project) => (
+      <div class="bg-slate-50 rounded-lg p-6 border border-slate-200 hover:border-primary-light transition-colors flex flex-col">
+        <div class="bg-primary rounded-full p-3 w-12 h-12 mb-4 flex items-center justify-center shrink-0">
+          <Icon class="text-white w-6 h-6" name={project.icon} />
+        </div>
+        <h3 class="font-semibold text-lg mb-3 text-slate-800">{project.title}</h3>
+        <p class="text-slate-600 text-sm leading-relaxed">{project.description}</p>
+      </div>
+    ))}
+  </div>
+</div>

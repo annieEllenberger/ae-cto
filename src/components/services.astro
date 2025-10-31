@@ -1,0 +1,49 @@
+---
+// @ts-ignore
+import { Icon } from "astro-icon/components";
+
+const services = [
+  {
+    title: "Technology Strategy & Planning",
+    description:
+      "I help you choose the right systems, avoid costly mistakes, and plan tech that grows with your business.",
+    icon: "bx:bx-compass",
+  },
+  {
+    title: "System Integration & Process Optimization",
+    description:
+      "Connect your existing tools, eliminate manual data entry, and allow you to focus on what matters — running your business.",
+    icon: "bx:bx-link",
+  },
+  {
+    title: "Team Development & Best Practices",
+    description:
+      "Whether you're managing technical staff or coordinating contractors, establish reliable processes and clear documentation.",
+    icon: "bx:bx-group",
+  },
+];
+---
+
+<div id="services" class="mt-16 scroll-mt-20">
+  <div class="mb-16">
+    <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
+      Problems I Solve
+    </h2>
+  </div>
+
+  <div class="grid sm:grid-cols-1 md:grid-cols-3 gap-10">
+    {
+      services.map((item) => (
+        <div class="flex gap-4 items-start">
+          <div class="mt-1 bg-primary rounded-full p-2 w-10 h-10 shrink-0 flex items-center justify-center">
+            <Icon class="text-white w-6 h-6" name={item.icon} />
+          </div>
+          <div>
+            <h3 class="font-semibold text-lg">{item.title}</h3>
+            <p class="text-slate-600 mt-2 leading-relaxed">{item.description}</p>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</div>

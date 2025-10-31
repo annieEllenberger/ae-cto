@@ -1,0 +1,47 @@
+---
+const packages = [
+  {
+    name: "Discovery & Audit",
+    description: "1 week assessment + written results analysis",
+    price: "$1000",
+  },
+  {
+    name: "Strategic Roadmap",
+    description: "2-4 week planning engagement + prioritized action plan",
+    price: "Starting at $2000",
+  },
+  {
+    name: "Fractional CTO Support",
+    description: "Ongoing part-time strategic guidance & oversight",
+    price: "Starting at $1000/month",
+  },
+  {
+    name: "Project-Based / Implementation",
+    description: "Project management and technical implementation",
+    price: "Custom Quote",
+  },
+];
+---
+
+<div id="engagement-options" class="mt-24 scroll-mt-20">
+  <div class="mb-12">
+    <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight text-center">
+      Engagement Options
+    </h2>
+  </div>
+
+  <div class="max-w-5xl mx-auto">
+    <div class="grid md:grid-cols-2 gap-6 mb-8">
+      {packages.map((pkg) => (
+        <div class="border border-slate-200 rounded-lg p-6 hover:border-primary-light hover:shadow-md transition-all">
+          <h3 class="text-xl font-semibold mb-2 text-slate-800">{pkg.name}</h3>
+          <p class="text-slate-600 mb-4">{pkg.description}</p>
+          <p class="text-2xl font-bold text-slate-800">{pkg.price}</p>
+        </div>
+      ))}
+    </div>
+    <p class="text-center text-slate-600 italic">
+      All packages are customized to suit your specific needs and timeline.
+    </p>
+  </div>
+</div>

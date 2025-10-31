@@ -1,0 +1,52 @@
+---
+const testimonials = [
+  {
+    text: "Having worked alongside Annie Ellenberger for several years, first as a peer on the Everdriven leadership team and later as a Software and Systems Architect at Covert Coders LLC, I have found Annie to be a valuable asset as both a technical leader and subject matter expert in software architecture development. Annie is able to successfully balance technical solutions, business needs, and cost for both large and small scale operations. She is an excellent mentor who proactively motivates technical staff. She also provides valuable strategic insights for business leaders. Her combination of technical expertise and business acumen make her an excellent fit for technical executive leadership. She would be a great asset to any operation seeking technical leadership.",
+    preview: "Having worked alongside Annie Ellenberger for several years, I have found Annie to be a valuable asset as both a technical leader and subject matter expert in software architecture development...",
+    author: "Harold Wilson",
+    company: "Covert Coders LLC"
+  },
+  {
+    text: "I had the pleasure of working with Annie at ALC Schools and EverDriven. She's a standout engineering leader—technically sharp, strategic, and incredibly effective at building scalable, cloud-native systems. Annie was instrumental in designing and delivering our core service architecture using Azure and .NET, which became the backbone of our operations. Any team would be lucky to have her.",
+    preview: "I had the pleasure of working with Annie at ALC Schools and EverDriven. She's a standout engineering leader—technically sharp, strategic, and incredibly effective at building scalable, cloud-native systems...",
+    author: "Nathan Bibb",
+    company: "Bibb Technology Consulting"
+  }
+];
+---
+
+<div id="testimonials" class="mt-24 scroll-mt-20">
+  <div class="mb-12">
+    <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight text-center">
+      Testimonials
+    </h2>
+  </div>
+
+  <div class="max-w-5xl mx-auto space-y-4">
+    {testimonials.map((testimonial, index) => (
+      <div class="bg-slate-50 rounded-lg p-5 border border-slate-200">
+        <div class="testimonial-content">
+          <p class="text-slate-700 italic leading-relaxed mb-3 testimonial-preview">"{testimonial.preview}"</p>
+          <p class="text-slate-700 italic leading-relaxed mb-3 testimonial-full hidden">"{testimonial.text}"</p>
+        </div>
+        <button 
+          class="text-primary hover:text-primary-hover text-sm font-medium mb-2 read-more-btn"
+          onclick={`
+            const content = this.previousElementSibling;
+            const preview = content.querySelector('.testimonial-preview');
+            const full = content.querySelector('.testimonial-full');
+            preview.classList.toggle('hidden');
+            full.classList.toggle('hidden');
+            this.textContent = preview.classList.contains('hidden') ? 'Read Less' : 'Read More';
+          `}
+        >
+          Read More
+        </button>
+        <div class="text-right">
+          <p class="font-semibold text-slate-800 text-sm">— {testimonial.author}</p>
+          <p class="text-slate-600 text-xs">{testimonial.company}</p>
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
