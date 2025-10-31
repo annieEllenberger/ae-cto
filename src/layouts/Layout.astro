@@ -24,7 +24,8 @@ const makeTitle = title
   ? title + " | " + "Annie Ellenberger"
   : "Annie Ellenberger - Fractional CTO & Technology Strategist";
 
-const faviconPath = import.meta.env.BASE_URL + 'favicon.svg';
+// Use new URL to properly join base path with favicon
+const faviconPath = new URL('favicon.svg', Astro.site).pathname;
 ---
 
 <!DOCTYPE html>
