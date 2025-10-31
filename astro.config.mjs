@@ -7,6 +7,6 @@ import icon from "astro-icon";
 // https://astro.build/config
 export default defineConfig({
   site: "https://annieellenberger.github.io",
-  base: "/ae-cto",
+  base: process.env.NODE_ENV === 'production' ? "/ae-cto" : "/",
   integrations: [tailwind(), mdx(), sitemap(), icon()],
 });
